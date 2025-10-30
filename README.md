@@ -53,7 +53,7 @@ The dataset is suitable for ETL exercises because it contains common data qualit
   - Categorized `TotalCost` into sales tiers (`Very Low`, `Low`, `Medium`, `High`, `Very High`) for analysis purposes.
 - **Output:** Saved transformed datasets as `transformed_full.csv` and `transformed_incremental.csv` in the `/transformed/` folder.
 
-- ## Load & Verification
+- ## Loading & Verification
 
 **Format Used:** SQLite
 
