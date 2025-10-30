@@ -53,6 +53,20 @@ The dataset is suitable for ETL exercises because it contains common data qualit
   - Categorized `TotalCost` into sales tiers (`Very Low`, `Low`, `Medium`, `High`, `Very High`) for analysis purposes.
 - **Output:** Saved transformed datasets as `transformed_full.csv` and `transformed_incremental.csv` in the `/transformed/` folder.
 
+- ## Load & Verification
+
+**Format Used:** SQLite
+
+**Process:**
+Data from `transformed_full.csv` and `transformed_incremental.csv` were loaded into a SQLite database file named `full_data.db` inside the `loaded/` folder using `sqlite3` and `pandas.to_sql()`.
+
+**Verification:**
+The following queries were executed to confirm successful loading and structure:
+```python
+pd.read_sql("SELECT * FROM full_data LIMIT 5", conn)
+pd.read_sql("SELECT COUNT(*) AS count FROM full_data", conn)
+
+
 ---
 
 ## 4. Tools Used
@@ -87,3 +101,4 @@ The following queries were executed to confirm successful loading and structure:
 ```python
 pd.read_sql("SELECT * FROM full_data LIMIT 5", conn)
 pd.read_sql("SELECT COUNT(*) AS count FROM full_data", conn)
+
