@@ -89,14 +89,6 @@ cd ET_Exam_Abdiqalaq_243
 
 ---
 
-## Load & Verification
-
-**Format Used:** SQLite
-
-**Process:**
-Data from `transformed_full.csv` and `transformed_incremental.csv` were loaded into a SQLite database file named `full_data.db` inside the `loaded/` folder using `sqlite3` and `pandas.to_sql()`.
-
-**Verification:**
 The following queries were executed to confirm successful loading and structure:
 ```python
 pd.read_sql("SELECT * FROM full_data LIMIT 5", conn)
